@@ -10,22 +10,22 @@ public class tictactoe {
 	}
 
 	public static void gridMaker() {
-		String[][] grid = { 
-				{ " | ", " | "}, 
-				{ " | ", " | "}, 
-				{ " | ", " | "} 
-			};
+	
+		char[][] grid;
+		grid = new char[3][3];
 
-		System.out.println("  A     B      C");
-		for (int row = 0; row < grid.length; row++) { // this will display all rows
-			System.out.println("------------------");
-			for (int column = 0; column < grid[row].length; column++) { // this will display all columns,
-				System.out.print("    ");
-				System.out.print(grid[row][column] ); // prints out the rows and columns along with integers
-			}
-			System.out.print("     " + (row + 1));
-			System.out.println();
-		}
-
+		System.out.println("  A   B   C");
+		System.out.println("-------------");
+		
+        for (int i = 0; i < 3; i++) {
+            System.out.print("| ");
+            for (int j = 0; j < 3; j++) {
+                System.out.print(grid[i][j] + " | ");
+            }
+            System.out.print(i+1);
+            System.out.println("\n" + "-------------");
+        }
+		
+		
 	}
 }
