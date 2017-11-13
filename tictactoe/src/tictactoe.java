@@ -5,8 +5,11 @@ public class tictactoe {
 	static char Player_X = 'x';
 	static char Player_O = 'o';
 	static char marker = 'x';
+	static int rowPicked;
+	static int columnPicked;
+	private static Scanner scanner;
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
+		scanner = new Scanner(System.in);
 		gridInitialize();
 		
 		System.out.println("Player vs Player (A)");
@@ -43,9 +46,30 @@ public class tictactoe {
 		}
 		areaPicker();
 	}
-	
+		// this will decide the designated place where the player wants their marker to be placed
 	public static void areaPicker() {
-		System.out.println();
+		System.out.println("Pick a row (A-C)");
+		String input = scanner.nextLine();
+		if(input.equalsIgnoreCase("A")) {
+			rowPicked = 1;		// A = 1, etc.
+		} else if(input.equalsIgnoreCase("B")) {
+			rowPicked = 2;
+		} else if(input.equalsIgnoreCase("C")) {
+			rowPicked = 3;
+		}
+		
+		System.out.println("Pick a column (1-3)");
+		int numInput = scanner.nextInt();
+		if(numInput == 1) {
+			columnPicked = 1;
+			placeMark();
+		} else if(numInput == 2) {
+			columnPicked = 2;
+			placeMark();
+		} else if(numInput == 3) {
+			columnPicked = 3;
+			placeMark();
+		}
 	}
 	
 	
