@@ -5,11 +5,11 @@ public class tictactoe {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		String input = scanner.nextLine();
+		gridMaker();
 		
 		System.out.println("Player vs Player (A)");
 		System.out.println("Player vs AI (B)");
-
+		String input = scanner.nextLine();
 		if(input.equalsIgnoreCase("A")) {
 			
 		} else if(input.equalsIgnoreCase("B")) {
