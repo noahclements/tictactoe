@@ -2,10 +2,12 @@ import java.util.Scanner;
 
 public class tictactoe {
 	private static char[][] grid = new char[3][3];
-
+	static char Player_X = 'x';
+	static char Player_O = 'o';
+	static char marker = 'x';
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		gridMaker();
+		gridInitialize();
 		
 		System.out.println("Player vs Player (A)");
 		System.out.println("Player vs AI (B)");
@@ -23,6 +25,7 @@ public class tictactoe {
 				grid[i][j] = '-';
 			}
 		}
+		gridMaker();
 	}
 
 	public static void gridMaker() {
@@ -38,8 +41,23 @@ public class tictactoe {
 			System.out.print(i + 1);
 			System.out.println("\n" + "-------------");
 		}
-
+		areaPicker();
 	}
+	
+	public static void areaPicker() {
+		System.out.println();
+	}
+	
+	
+	
+	public static void markerChange() {
+		if(marker == Player_X) {
+			marker = Player_O;
+		} else if(marker == Player_O) {
+			marker = Player_X;
+		}	 
+	}
+	
 	
 	public static void placeMark() {
 		
