@@ -75,17 +75,21 @@ public class tictactoe {
 	
 	
 	public static void markerChange() {
-		if(marker == Player_X) {
-			marker = Player_O;
-		} else if(marker == Player_O) {
-			marker = Player_X;
+		if(marker == 'x') {
+			marker = 'o';
+		} else {
+			marker = 'x';
 		}	 
 	}
 	
 	
 	public static void placeMark() {
-		
+		if(grid[columnPicked][rowPicked] == '-') {
+			grid[columnPicked][rowPicked] = marker;
+		}
 	}
+		
+	
 	
 	
 	
