@@ -97,6 +97,9 @@ public class tictactoe {
 		if(grid[rowPicked][columnPicked] == '-') {
 			grid[rowPicked][columnPicked] = marker;
 			markerChange();
+		} else if(grid[rowPicked][columnPicked] == 'x' || grid[rowPicked][columnPicked] == 'o') {
+			System.out.println("Please pick an empty space");
+			rowPicker();
 		}
 	}
 		
