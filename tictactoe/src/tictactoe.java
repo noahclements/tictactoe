@@ -98,7 +98,7 @@ public class tictactoe {
 		}
 	}
 		
-	public static  boolean rowChecker() {
+	public static boolean rowChecker() {
 		for(int i = 0; i < 3; i++) {
 		if((grid[i][0] == 'x' && grid[i][1] == 'x' && grid[i][2] == 'x') || (grid[i][0] == 'o' && grid[i][1] == 'o' && grid[i][2] == 'o')) {
 			return true;
@@ -107,8 +107,17 @@ public class tictactoe {
 		return false;
 }
 	
+	public static boolean columnChecker() {
+		for(int i = 0; i < 3; i++) {
+			if((grid[0][i] == 'x' && grid[1][i] == 'x' && grid[2][i] == 'x') || (grid[0][i] == 'o' && grid[1][i] == 'o' && grid[2][i] == 'o')) {
+				return true;
+			} 
+		}
+			return false;
+	}
+	
 	public static void checkWinner() {
-			if(rowChecker() == true) {
+			if(rowChecker() == true || columnChecker() == true) {
 				System.out.println("Player "+ marker + " is the winner!");
 				System.out.println("Thank you for playing!");
 			} else {
