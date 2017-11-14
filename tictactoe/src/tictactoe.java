@@ -55,15 +55,12 @@ public class tictactoe {
 		  input = scanner.nextLine();
 		if(input.equalsIgnoreCase("A")) {
 			rowPicked = 0;		// A = 0, etc.
-			columnPicker();
 		} else if(input.equalsIgnoreCase("B")) {
 			rowPicked = 1;
-			columnPicker();
 		} else if(input.equalsIgnoreCase("C")) {
 			rowPicked = 2;
-			columnPicker();
 		} 
-		
+		columnPicker();
 	}
 	
 	public static void columnPicker() {
@@ -72,14 +69,12 @@ public class tictactoe {
 		numInput = scanner.nextInt();
 	if(numInput == 1) {
 		columnPicked = 0;	// grid array starts at 0..
-		placeMark(columnPicked, rowPicked);
 	} else if(numInput == 2) {
 		columnPicked = 1;
-		placeMark(columnPicked, rowPicked);
 	} else if(numInput == 3) {
 		columnPicked = 2;
-		placeMark(columnPicked, rowPicked);
 	}
+	placeMark(columnPicked, rowPicked);
 	}
 	
 	
