@@ -126,15 +126,28 @@ public class tictactoe {
 		}
 	}
 	
+	public static boolean checkFull() {
+		for(int i = 0; i < 3; i++) {
+			for(int x = 0; i < 3; i++) {
+				if(grid[i][x] == '-') {
+					return false;
+			}
+		}
+	}
+		return true;
+}
+	
+
+	
 	public static void checkWinner() {
 			if(rowChecker() == true || columnChecker() == true || diagonalChecker() == true) {
 				System.out.println("Player "+ marker + " is the winner!");
 				System.out.println("Thank you for playing!");
+			} else if(checkFull() == true) {
+				System.out.println("The grid is full, Game Over!");
 			} else {
 				markerChange();
 			}
-			
-		
 	}
 	
 	
