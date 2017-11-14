@@ -116,8 +116,18 @@ public class tictactoe {
 			return false;
 	}
 	
+	public static boolean diagonalChecker() {
+		if((grid[0][0] == 'x' && grid[1][1] == 'x' && grid[2][2] == 'x') || (grid[0][0] == 'o' && grid[1][1] == 'o' && grid[2][2] == 'o')) {
+			return true;
+		} else if((grid[0][2] == 'x' && grid[1][1] == 'x' && grid[2][0] == 'x') || (grid[0][2] == 'o' && grid[1][1] == 'o' && grid[2][0] == 'o')) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	public static void checkWinner() {
-			if(rowChecker() == true || columnChecker() == true) {
+			if(rowChecker() == true || columnChecker() == true || diagonalChecker() == true) {
 				System.out.println("Player "+ marker + " is the winner!");
 				System.out.println("Thank you for playing!");
 			} else {
