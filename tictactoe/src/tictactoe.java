@@ -91,14 +91,32 @@ public class tictactoe {
 	public static void placeMark(int rowPicked, int columnPicked) {
 		if(grid[rowPicked][columnPicked] == '-') {
 			grid[rowPicked][columnPicked] = marker;
-			markerChange();
+			checkWinner();
 		} else if(grid[rowPicked][columnPicked] == 'x' || grid[rowPicked][columnPicked] == 'o') {
 			System.out.println("Please pick an empty space");
 			rowPicker();
 		}
 	}
 		
+	public static  boolean rowChecker() {
+		for(int i = 0; i < 3; i++) {
+		if((grid[i][0] == 'x' && grid[i][1] == 'x' && grid[i][2] == 'x') || (grid[i][0] == 'o' && grid[i][1] == 'o' && grid[i][2] == 'o')) {
+			return true;
+		} 
+	}
+		return false;
+}
 	
+	public static void checkWinner() {
+			if(rowChecker() == true) {
+				System.out.println("Player "+ marker + " is the winner!");
+				System.out.println("Thank you for playing!");
+			} else {
+				markerChange();
+			}
+			
+		
+	}
 	
 	
 	
