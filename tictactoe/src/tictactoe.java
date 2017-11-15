@@ -128,10 +128,10 @@ public class tictactoe {
 	
 	public static boolean checkFull() {
 		for(int i = 0; i < 3; i++) {
-			for(int x = 0; i < 3; i++) {
+			for(int x = 0; x < 3; x++) {
 				if(grid[i][x] == '-') {
 					return false;
-			}
+			} 
 		}
 	}
 		return true;
@@ -144,14 +144,10 @@ public class tictactoe {
 				System.out.println("Player "+ marker + " is the winner!");
 				System.out.println("Thank you for playing!");
 			} else if(checkFull() == true) {
-				System.out.println("The grid is full, Game Over!");
+				System.out.println("The Grid is full, Game Over!");
 			} else {
 				markerChange();
 			}
 	}
-	
-	
-	
-	
 	
 }
