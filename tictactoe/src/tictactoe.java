@@ -7,9 +7,11 @@ public class tictactoe {
 	static int rowPicked;
 	static int columnPicked;
 	private static Scanner scanner;
-	private static int numInput;
+	private static String numInput;
 	private static String input;
-
+	private static boolean boolRow = false;
+	private static boolean boolCol = false;
+	
 	public static void main(String[] args) {
 		scanner = new Scanner(System.in);
 		gridInitialize();
@@ -53,13 +55,20 @@ public class tictactoe {
 	public static void rowPicker() {
 		System.out.println("Pick a row (A-C)");
 		scanner = new Scanner(System.in);
-		input = scanner.nextLine();
-		if (input.equalsIgnoreCase("A")) {
-			rowPicked = 0; // A = 0, etc.
-		} else if (input.equalsIgnoreCase("B")) {
-			rowPicked = 1;
-		} else if (input.equalsIgnoreCase("C")) {
-			rowPicked = 2;
+		while(boolRow == false) {
+			input = scanner.nextLine();
+			if (input.equalsIgnoreCase("A")) {
+				rowPicked = 0; // A = 0, etc.
+				boolRow = true;
+			} else if (input.equalsIgnoreCase("B")) {
+				rowPicked = 1;
+				boolRow = true;
+			} else if (input.equalsIgnoreCase("C")) {
+				rowPicked = 2;
+				boolRow = true;
+			} else {
+				System.out.println("INVALID INPUT, please enter a row from A-C");
+			}
 		}
 		columnPicker();
 	}
@@ -67,16 +76,25 @@ public class tictactoe {
 	public static void columnPicker() {
 		System.out.println("Pick a column (1-3)");
 		scanner = new Scanner(System.in);
-		numInput = scanner.nextInt();
-		if (numInput == 1) {
-			columnPicked = 0; // grid array starts at 0..
-		} else if (numInput == 2) {
-			columnPicked = 1;
-		} else if (numInput == 3) {
-			columnPicked = 2;
+		while (boolCol == false) {
+			numInput = scanner.nextLine();
+			if (numInput.equals("1")) {
+				columnPicked = 0; // grid array starts at 0..
+				boolCol = true;
+			} else if (numInput.equals("2")) {
+				columnPicked = 1;
+				boolCol = true;
+			} else if (numInput.equals("3")) {
+				columnPicked = 2;
+				boolCol = true;
+			} else {
+				System.out.println("INVALID INPUT, please enter a number between 1 and 3");
+			}
 		}
 		placeMark(columnPicked, rowPicked);
 	}
+		
+	
 
 	public static void markerChange() {
 		if (marker == 'x') {
