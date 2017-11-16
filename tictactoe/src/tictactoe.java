@@ -112,26 +112,26 @@ public class tictactoe {
 	
 	public static boolean rowChecker() {
 		for(int i = 0; i < 3; i++) {
-		if((grid[i][0] == 'x' && grid[i][1] == 'x' && grid[i][2] == 'x') || (grid[i][0] == 'o' && grid[i][1] == 'o' && grid[i][2] == 'o')) {
-			return true;
-		} 
+		if(grid[i][0] == marker && grid[i][1] == marker && grid[i][2] == marker) {
+				return true;
+			}
 	}
 		return false;
 }
 	
 	public static boolean columnChecker() {
 		for(int i = 0; i < 3; i++) {
-			if((grid[0][i] == 'x' && grid[1][i] == 'x' && grid[2][i] == 'x') || (grid[0][i] == 'o' && grid[1][i] == 'o' && grid[2][i] == 'o')) {
+		if(grid[0][i] == marker && grid[1][i] == marker && grid[2][i] == marker) {
 				return true;
-			} 
+			}
 		}
 			return false;
 	}
 	
 	public static boolean diagonalChecker() {
-		if((grid[0][0] == 'x' && grid[1][1] == 'x' && grid[2][2] == 'x') || (grid[0][0] == 'o' && grid[1][1] == 'o' && grid[2][2] == 'o')) {
+		if(grid[0][0] == marker && grid[1][1] == marker && grid[2][2] == marker) {
 			return true;
-		} else if((grid[0][2] == 'x' && grid[1][1] == 'x' && grid[2][0] == 'x') || (grid[0][2] == 'o' && grid[1][1] == 'o' && grid[2][0] == 'o')) {
+		} else if(grid[0][2] == marker && grid[1][1] == marker && grid[2][0] == marker) {
 			return true;
 		} else {
 			return false;
