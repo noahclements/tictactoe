@@ -75,20 +75,17 @@ public class tictactoe {
 	}
 
 	public static void columnPicker() {
-		boolCol = false;
+		columnPicked = 3;
 		System.out.println("Pick a column (1-3)");
 		scanner = new Scanner(System.in);
-		while (boolCol == false) {
-			numInput = scanner.nextLine();
-			if (numInput.equals("1")) {
+		while (!(columnPicked == 0 || columnPicked == 1 || columnPicked == 2)) {
+			numInput = scanner.nextLine();	// chose to use String instead of int so it doesnt crash if non-int
+			if (numInput.equals("1")) {		
 				columnPicked = 0; // grid array starts at 0..
-				boolCol = true;
 			} else if (numInput.equals("2")) {
 				columnPicked = 1;
-				boolCol = true;
 			} else if (numInput.equals("3")) {
 				columnPicked = 2;
-				boolCol = true;
 			} else {
 				System.out.println("INVALID INPUT, please enter a number between 1 and 3");
 			}
