@@ -121,9 +121,9 @@ public class tictactoe {
 	
 	public static boolean columnChecker() {
 		for(int i = 0; i < 3; i++) {
-			if((grid[0][i] == 'x' && grid[1][i] == 'x' && grid[2][i] == 'x') || (grid[0][i] == 'o' && grid[1][i] == 'o' && grid[2][i] == 'o')) {
+		if(grid[0][i] == marker && grid[1][i] == marker && grid[2][i] == marker) {
 				return true;
-			} 
+			}
 		}
 			return false;
 	}
