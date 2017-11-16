@@ -129,9 +129,9 @@ public class tictactoe {
 	}
 	
 	public static boolean diagonalChecker() {
-		if((grid[0][0] == 'x' && grid[1][1] == 'x' && grid[2][2] == 'x') || (grid[0][0] == 'o' && grid[1][1] == 'o' && grid[2][2] == 'o')) {
+		if(grid[0][0] == marker && grid[1][1] == marker && grid[2][2] == marker) {
 			return true;
-		} else if((grid[0][2] == 'x' && grid[1][1] == 'x' && grid[2][0] == 'x') || (grid[0][2] == 'o' && grid[1][1] == 'o' && grid[2][0] == 'o')) {
+		} else if(grid[0][2] == marker && grid[1][1] == marker && grid[2][0] == marker) {
 			return true;
 		} else {
 			return false;
