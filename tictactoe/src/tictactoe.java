@@ -9,7 +9,7 @@ public class tictactoe {
 	private static Scanner scanner;
 	private static String numInput;
 	private static String input;
-	
+
 	public static void main(String[] args) {
 		scanner = new Scanner(System.in);
 		gridInitialize();
@@ -54,7 +54,7 @@ public class tictactoe {
 		rowPicked = 3;
 		System.out.println("Pick a row (A-C)");
 		scanner = new Scanner(System.in);
-		while(!(rowPicked == 0 || rowPicked == 1 || rowPicked == 2)) {
+		while (!(rowPicked == 0 || rowPicked == 1 || rowPicked == 2)) {
 			input = scanner.nextLine();
 			if (input.equalsIgnoreCase("A")) {
 				rowPicked = 0; // A = 0, etc.
@@ -74,8 +74,8 @@ public class tictactoe {
 		System.out.println("Pick a column (1-3)");
 		scanner = new Scanner(System.in);
 		while (!(columnPicked == 0 || columnPicked == 1 || columnPicked == 2)) {
-			numInput = scanner.nextLine();	// chose to use String instead of int so it doesnt crash if non-int
-			if (numInput.equals("1")) {		
+			numInput = scanner.nextLine(); // chose to use String instead of int so it doesnt crash if non-int
+			if (numInput.equals("1")) {
 				columnPicked = 0; // grid array starts at 0..
 			} else if (numInput.equals("2")) {
 				columnPicked = 1;
@@ -84,12 +84,10 @@ public class tictactoe {
 			} else {
 				System.out.println("INVALID INPUT, please enter a number between 1 and 3");
 			}
-				
+
 		}
 		placeMark(columnPicked, rowPicked);
 	}
-		
-	
 
 	public static void markerChange() {
 		if (marker == 'x') {
@@ -109,29 +107,29 @@ public class tictactoe {
 			rowPicker();
 		}
 	}
-	
+
 	public static boolean rowChecker() {
-		for(int i = 0; i < 3; i++) {
-		if(grid[i][0] == marker && grid[i][1] == marker && grid[i][2] == marker) {
-				return true;
-			}
-	}
-		return false;
-}
-	
-	public static boolean columnChecker() {
-		for(int i = 0; i < 3; i++) {
-		if(grid[0][i] == marker && grid[1][i] == marker && grid[2][i] == marker) {
+		for (int i = 0; i < 3; i++) {
+			if (grid[i][0] == marker && grid[i][1] == marker && grid[i][2] == marker) {
 				return true;
 			}
 		}
-			return false;
+		return false;
 	}
-	
+
+	public static boolean columnChecker() {
+		for (int i = 0; i < 3; i++) {
+			if (grid[0][i] == marker && grid[1][i] == marker && grid[2][i] == marker) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	public static boolean diagonalChecker() {
-		if(grid[0][0] == marker && grid[1][1] == marker && grid[2][2] == marker) {
+		if (grid[0][0] == marker && grid[1][1] == marker && grid[2][2] == marker) {
 			return true;
-		} else if(grid[0][2] == marker && grid[1][1] == marker && grid[2][0] == marker) {
+		} else if (grid[0][2] == marker && grid[1][1] == marker && grid[2][0] == marker) {
 			return true;
 		} else {
 			return false;
