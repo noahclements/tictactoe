@@ -112,9 +112,9 @@ public class tictactoe {
 	
 	public static boolean rowChecker() {
 		for(int i = 0; i < 3; i++) {
-		if((grid[i][0] == 'x' && grid[i][1] == 'x' && grid[i][2] == 'x') || (grid[i][0] == 'o' && grid[i][1] == 'o' && grid[i][2] == 'o')) {
-			return true;
-		} 
+		if(grid[i][0] == marker && grid[i][1] == marker && grid[i][2] == marker) {
+				return true;
+			}
 	}
 		return false;
 }
