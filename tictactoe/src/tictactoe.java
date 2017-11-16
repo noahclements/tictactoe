@@ -9,8 +9,6 @@ public class tictactoe {
 	private static Scanner scanner;
 	private static String numInput;
 	private static String input;
-	private static boolean boolRow;
-	private static boolean boolCol;
 	
 	public static void main(String[] args) {
 		scanner = new Scanner(System.in);
@@ -53,20 +51,17 @@ public class tictactoe {
 	}
 		// this will decide the designated place where the player wants their marker to be placed
 	public static void rowPicker() {
-		boolRow = false;
+		rowPicked = 3;
 		System.out.println("Pick a row (A-C)");
 		scanner = new Scanner(System.in);
-		while(boolRow == false) {
+		while(!(rowPicked == 0 || rowPicked == 1 || rowPicked == 2)) {
 			input = scanner.nextLine();
 			if (input.equalsIgnoreCase("A")) {
 				rowPicked = 0; // A = 0, etc.
-				boolRow = true;
 			} else if (input.equalsIgnoreCase("B")) {
 				rowPicked = 1;
-				boolRow = true;
 			} else if (input.equalsIgnoreCase("C")) {
 				rowPicked = 2;
-				boolRow = true;
 			} else {
 				System.out.println("INVALID INPUT, please enter a row from A-C");
 			}
